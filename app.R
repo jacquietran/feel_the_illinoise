@@ -29,7 +29,11 @@ ui <- fluidPage(
       selectInput("noise", "Noise type", noise_types),
       HTML(r"(
            <hr>
-           <small><strong>Footnote:</strong> The name of this app is in reference to the album <strong><a href="https://music.sufjan.com/album/illinois" target="_blank">"Illinois" by Sufjan Stevens</a></strong>.</small>)")
+           <small><strong>Footnotes:</strong></small>
+           <br>
+           <small>1. The code that generates these artworks uses the following R packages: {ggplot2}, {dplyr}, {purrr}, and {ambient}.</small>
+           <br>
+           <small>2. The name of this app is in reference to the album <strong><a href="https://music.sufjan.com/album/illinois" target="_blank">"Illinois" by Sufjan Stevens</a></strong>.</small>)")
       
     ),
     mainPanel(

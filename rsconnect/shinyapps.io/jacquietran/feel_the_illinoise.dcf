@@ -5,9 +5,9 @@ account: jacquietran
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6158913
-bundleId: 5831265
+bundleId: 5831304
 url: https://jacquietran.shinyapps.io/feel_the_illinoise/
-when: 1650792435.22389
-lastSyncTime: 1650792435.22389
+when: 1650794751.38299
+lastSyncTime: 1650794751.38299
 asMultiple: FALSE
 asStatic: FALSE

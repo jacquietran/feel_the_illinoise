@@ -4,8 +4,8 @@ library(ggplot2)
 source(here::here("illinoise.R"))
 
 noise_types <- c("perlin", "simplex", "cubic", "value")
-line_colour <- "#FFFFFF"
-bg_colour <- "#000000"
+line_colour <- "#161C32"
+bg_colour <- "#FFFFFF"
 
 ui <- fluidPage(
   
@@ -14,8 +14,12 @@ ui <- fluidPage(
   titlePanel("Feel The Illinoise!"),
   sidebarLayout(
     sidebarPanel(
+      HTML(r"(
+           <p>An app by <strong><a href="https://art.jacquietran.com" target="_blank">Jacquie Tran</a></strong>.</p>
+           <hr>)"),
+      p("Modify the values below to generate your own noise art."),
       numericInput(
-        "seed", "Seed value", value = 1958),
+        "seed", "Seed value", value = 1000),
       sliderInput(
         "grid_length", "Grid length", value = 100, min = 10, max = 130,
         step = 5),
@@ -23,7 +27,10 @@ ui <- fluidPage(
         "warp", "Warp factor", value = 100, min = 10, max = 150,
         step = 10),
       selectInput("noise", "Noise type", noise_types),
-      p("Footnote: The name of this app is in reference to the album \"Illinois\" by Sufjan Stevens.")
+      HTML(r"(
+           <hr>
+           <small><strong>Footnote:</strong> The name of this app is in reference to the album <strong><a href="https://music.sufjan.com/album/illinois" target="_blank">"Illinois" by Sufjan Stevens</a></strong>.</small>)")
+      
     ),
     mainPanel(
       plotOutput("plot")
@@ -64,9 +71,9 @@ server <- function(input, output, session) {
       theme(
         legend.position = "none",
         plot.background = element_rect(fill = bg_colour, colour = bg_colour),
-        plot.margin     = margin(10,10,10,10, unit = "pt"))
+        plot.margin     = margin(20,20,20,20, unit = "pt"))
     
-  }, width = 700, height = 700, res = 300)
+  }, width = 800, height = 800, res = 300)
   
 }
 
